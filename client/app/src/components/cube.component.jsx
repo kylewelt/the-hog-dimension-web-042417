@@ -83,7 +83,7 @@ export default class Cube extends Component {
     })
 
     return (
-      <div className="cube-container">
+      <div className="cube-container" style={{position: 'fixed', zIndex: 1}}>
         <div className="oscillation-wrapper oscillate">
           <div className="cube" id={this.props.cubeName}>
             {sides}

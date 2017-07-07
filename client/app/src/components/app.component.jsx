@@ -21,7 +21,8 @@ export default class App extends Component {
     // require('../helpers/fogEffect.js')
   }
 
-  handleTileClick () {
+  handleTileClick (e) {
+    console.log('herhheh')
     this.openModal()
   }
 
@@ -46,13 +47,15 @@ export default class App extends Component {
       localStorage.setItem("repeatVisit", true)
     }
     const tiles = [...Array(8)].map((_, tileIdx) => {
-      return <Tile key={tileIdx} tileIdx={tileIdx} tileData={getTileData(tileIdx)} onTileClick={this.handleTileClick} />
+      return <Tile key={tileIdx} tileIdx={tileIdx} tileData={getTileData(tileIdx)} onClick={this.handleTileClick.bind(this)} />
     })
 
     return (
       <div>
+        {this.state.showModal ? <HogModal showModal={this.state.showModal} closeModal={this.closeModal} /> : null}
         {guide}
         {/* <canvas id="c"></canvas> */}
+
         <Cube cubeName={this.state.defaultCube} />
         {tiles}
       </div>

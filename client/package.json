@@ -34,9 +34,10 @@
     "webpack": "^2.4.1"
   },
   "dependencies": {
-    "babel-core": "^6.24.1",
+    "babel-core": "^6.25.0",
     "express": "^4.15.2",
     "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
