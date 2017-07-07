@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import Cube from './cube.component.jsx'
 import Tile from './tile.component.jsx'
+import HogModal from './hogModal.component.jsx'
 import activateGuide from '../helpers/guideMe.js'
 import { getTileData } from '../helpers/tileDataMapper.js'
 
@@ -11,15 +12,33 @@ export default class App extends Component {
     this.state = {
       activeFaceIdx: 0,
       defaultCube: 'home-cube',
+      showModal: false
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     console.log('starting background fog')
-    require('../helpers/fogEffect.js')
+    // require('../helpers/fogEffect.js')
   }
 
-  render() {
+  handleTileClick () {
+    this.openModal()
+  }
+
+  openModal () {
+    console.log('tile clicked')
+    this.setState({
+      showModal: true
+    })
+  }
+
+  closeModal () {
+    this.setState({
+      showModal: false
+    })
+  }
+
+  render () {
     let guide = null
     if (!localStorage.getItem("repeatVisit")) {
       activateGuide(this.state.defaultCube)
@@ -27,13 +46,13 @@ export default class App extends Component {
       localStorage.setItem("repeatVisit", true)
     }
     const tiles = [...Array(8)].map((_, tileIdx) => {
-      return <Tile key={tileIdx} tileIdx={tileIdx} tileData={getTileData(tileIdx)} />
+      return <Tile key={tileIdx} tileIdx={tileIdx} tileData={getTileData(tileIdx)} onTileClick={this.handleTileClick} />
     })
 
     return (
       <div>
         {guide}
-        <canvas id="c"></canvas>
+        {/* <canvas id="c"></canvas> */}
         <Cube cubeName={this.state.defaultCube} />
         {tiles}
       </div>

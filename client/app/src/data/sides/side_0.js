@@ -1,7 +1,7 @@
 const faceData = {
   sideType: 'standard',
-  title: 'Welcome!',
-  longScrip: "Hey there - my name is Tony. Welcome to my 100% hog dedicated website! I am excited to share with you which hogs I like most. Please explore the site to learn more about the hogs that I chose. Hope you are ready for an adventure! Use WASD or click the cube edges to get started.",
+  title: 'Welcome, my name is Jeff Goldblum!',
+  longScrip: '',
   linkUrls: '',
   media: {
     imgs: [],
@@ -10,7 +10,7 @@ const faceData = {
   },
   style: {
     sideCSS: {
-      backgroundImage: "",
+      backgroundImage: "url(https://www.themarysue.com/wp-content/uploads/2017/04/jurass-park-4-world-jeff-goldblum.jpg)",
       backgroundColor: 'pink',
     },
     faceCSS: {

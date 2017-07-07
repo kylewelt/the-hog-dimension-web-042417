@@ -49,3 +49,13 @@
 .bw-img:hover {
   opacity: 0;
 }
+
+.hog-tooltip {
+  position: absolute;
+  opacity: 0;
+  z-index: 99999;
+}
+
+.tile-content:hover .hog-tooltip {
+  opacity: 1;
+}

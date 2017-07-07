@@ -2,6 +2,7 @@ const faceData = {
   sideType: 'standard',
   linkUrls: '',
   animator: 'fold',
+  title: 'Click to see some wonderful pigs',
   media: {
     imgs: [],
     videos: '',

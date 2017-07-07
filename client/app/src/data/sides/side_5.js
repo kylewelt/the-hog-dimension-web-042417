@@ -8,7 +8,7 @@ const faceData = {
   },
   style: {
     sideCSS: {
-      backgroundImage: "url(media/imgs/poorecursion.gif)",
+      // backgroundImage: "url(media/imgs/poorecursion.gif)",
       borderColor: '#FF7711',
       backgroundColor: 'orange',
     },
